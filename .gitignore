@@ -13,3 +13,4 @@ pipe/pipe-std.c
 pipe/psim
 seq/seq-std.c
 seq/ssim
+hcl2v
