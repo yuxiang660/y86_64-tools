@@ -4,15 +4,18 @@ VERSION=std
 
 # Comment this out if you don't have Tcl/Tk on your system
 
-GUIMODE=-DHAS_GUI
+# GUIMODE=-DHAS_GUI
 
 # Modify the following line so that gcc can find the libtcl.so and
 # libtk.so libraries on your system. You may need to use the -L option
 # to tell gcc which directory to look in. Comment this out if you
 # don't have Tcl/Tk.
+
+# Please use ubuntu18 to install tcl8.5, ubuntu20 install tcl8.6 by default which doesn't work for the code
 # Install command:
 #	sudo apt install tcl8.5-dev tk8.5-dev
-TKLIBS=-L/usr/lib/x86_64-linux-gnu -ltk -ltcl
+
+# TKLIBS=-L/usr/lib/x86_64-linux-gnu -ltk -ltcl
 
 # Modify the following line so that gcc can find the tcl.h and tk.h
 # header files on your system. Comment this out if you don't have
@@ -61,6 +64,7 @@ ssim+: seq+-std.hcl ssim.c sim.h $(MISCDIR)/isa.c $(MISCDIR)/isa.h
 clean:
 	rm -f ssim ssim+ seq*-*.c *.o *~ *.exe *.yo *.ys
 
-
+run:
+	./ssim ../y86-code/prog1.yo
 
 
