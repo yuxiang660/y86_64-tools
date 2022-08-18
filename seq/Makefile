@@ -65,6 +65,6 @@ clean:
 	rm -f ssim ssim+ seq*-*.c *.o *~ *.exe *.yo *.ys
 
 run:
-	./ssim ../y86-code/prog1.yo
+	./ssim ../y86-code/asum.yo
 
 
