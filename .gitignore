@@ -14,3 +14,4 @@ pipe/psim
 seq/seq-std.c
 seq/ssim
 hcl2v
+.vscode/
