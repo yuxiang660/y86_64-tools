@@ -21,13 +21,14 @@ VERSION=std
 # header files on your system. Comment this out if you don't have
 # Tcl/Tk.
 
-TKINC=-isystem /usr/include/tcl8.5
+TKINC=-isystem /usr/include/tcl
 
 # Modify these two lines to choose your compiler and compile time
 # flags.
 
 CC=gcc
-CFLAGS=-Wall -O2
+# -DUSE_INTERP_RESULT is used to workaround tcl8.6 compile error: ‘Tcl_Interp’ {aka ‘struct Tcl_Interp’} has no member named ‘result’
+CFLAGS=-Wall -O2 -DUSE_INTERP_RESULT
 
 ##################################################
 # You shouldn't need to modify anything below here
@@ -67,4 +68,5 @@ clean:
 run:
 	./ssim ../y86-code/asum.yo
 
-
+run_gui:
+	./ssim -g ../y86-code/asum.yo
