@@ -28,7 +28,7 @@ TKINC=-isystem /usr/include/tcl
 
 CC=gcc
 # -DUSE_INTERP_RESULT is used to workaround tcl8.6 compile error: ‘Tcl_Interp’ {aka ‘struct Tcl_Interp’} has no member named ‘result’
-CFLAGS=-Wall -O2 -DUSE_INTERP_RESULT
+CFLAGS=-Wall -Og -g -DUSE_INTERP_RESULT
 
 ##################################################
 # You shouldn't need to modify anything below here
@@ -70,3 +70,8 @@ run:
 
 run_gui:
 	./ssim -g ../y86-code/asum.yo
+
+debug_gui:
+	gdb -q ./ssim \
+	-ex "start -g ../y86-code/asum.yo"
+
